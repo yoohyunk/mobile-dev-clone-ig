@@ -1,4 +1,11 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Button,
+  ScrollView,
+} from "react-native";
 
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import Ionicons from "react-native-vector-icons/Ionicons";
@@ -7,6 +14,10 @@ import { LinearGradient } from "expo-linear-gradient";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 export default function App() {
+  function showAlert(event: GestureResponderEvent): void {
+    throw new Error("Function not implemented.");
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.topBar}>
@@ -21,234 +32,239 @@ export default function App() {
           <Feather name="more-horizontal" size={30} color="white" />
         </View>
       </View>
-      <View
-        style={{
-          gap: 15,
-          backgroundColor: "black",
-          width: "100%",
-          paddingHorizontal: 15,
-          paddingTop: 15,
-          paddingBottom: 2,
-        }}
-      >
+      <ScrollView contentContainerStyle={styles.scrollContent}>
         <View
           style={{
-            flexDirection: "row",
-            justifyContent: "flex-start",
-            alignItems: "center",
-            width: "100%",
             gap: 15,
-          }}
-        >
-          <LinearGradient
-            colors={["#F6017A", "#D10869", "#B7098B", "#F77737", "#FFDC80"]}
-            style={{
-              borderWidth: 3,
-              borderRadius: 55,
-              padding: 3,
-            }}
-          >
-            <View
-              style={{
-                backgroundColor: "black",
-                borderRadius: 50,
-                padding: 3,
-              }}
-            >
-              <Image
-                source={{
-                  uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0IQ0E8QBrwViT6tBHS5ON7yK3wjZal2-EgQ&s",
-                }}
-                style={{
-                  width: 90,
-                  height: 90,
-                  borderRadius: 50,
-                }}
-              />
-            </View>
-          </LinearGradient>
-          <View style={{ flexDirection: "column", gap: 10 }}>
-            <Text style={{ fontWeight: "bold", fontSize: 17, color: "white" }}>
-              Sait
-            </Text>
-            <View style={{ flexDirection: "row", gap: 20 }}>
-              <View>
-                <Text
-                  style={{ fontWeight: "bold", fontSize: 17, color: "white" }}
-                >
-                  20
-                </Text>
-                <Text style={{ color: "white" }}>posts</Text>
-              </View>
-              <View>
-                <Text
-                  style={{ fontWeight: "bold", fontSize: 17, color: "white" }}
-                >
-                  20
-                </Text>
-                <Text style={{ color: "white" }}>followers</Text>
-              </View>
-              <View>
-                <Text
-                  style={{ fontWeight: "bold", fontSize: 17, color: "white" }}
-                >
-                  20
-                </Text>
-                <Text style={{ color: "white" }}>following</Text>
-              </View>
-            </View>
-          </View>
-        </View>
-        <View>
-          <Text style={{ color: "gray" }}>University</Text>
-          <Text style={{ color: "white" }}>
-            We inspire, educate and inovate, with and for our students. Tag your
-            with <Text style={{ color: "#769BB6" }}>#hereAtSAIT</Text> for a
-            chance to be featured!
-          </Text>
-          <Text style={{ color: "white" }}>
-            Current <Text style={{ color: "#769BB6" }}>@hereatsait</Text>
-          </Text>
-          <Text style={{ color: "#769BB6" }}>
-            1301 16 Ave NW, Calgary, Alberta
-          </Text>
-          <View style={{ flexDirection: "row", gap: 10, alignItems: "center" }}>
-            <MaterialIcons name="link" size={20} color="white" />
-            <Text style={{ color: "white" }}>sait.ca and 1 more</Text>
-          </View>
-        </View>
-
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-            gap: 10,
-          }}
-        >
-          <View
-            style={{
-              backgroundColor: "#4553BD",
-              borderRadius: 5,
-              flex: 1,
-              height: 33,
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Text style={{ color: "white" }}>Follow</Text>
-          </View>
-
-          <View
-            style={{
-              borderColor: "white",
-              borderWidth: 1,
-              borderRadius: 5,
-              flex: 1,
-              height: 33,
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Text style={{ color: "white" }}>Message</Text>
-          </View>
-          <View
-            style={{
-              borderColor: "white",
-              borderWidth: 1,
-              borderRadius: 5,
-              flex: 1,
-              height: 33,
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Text style={{ color: "white" }}>Contact</Text>
-          </View>
-          <View
-            style={{
-              borderColor: "white",
-              borderWidth: 1,
-              borderRadius: 5,
-              flex: 0.3,
-              height: 33,
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <MaterialIcons name="person-add" size={20} color="white" />
-          </View>
-        </View>
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-
-            paddingHorizontal: 50,
+            backgroundColor: "black",
+            width: "100%",
+            paddingHorizontal: 15,
+            paddingTop: 15,
             paddingBottom: 2,
           }}
         >
-          <View style={{ position: "relative", alignItems: "center" }}>
-            <Ionicons
-              name="grid-outline"
-              size={30}
-              color="white"
-              style={{ paddingBottom: 10 }}
-            />
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              width: "100%",
+              gap: 15,
+            }}
+          >
+            <LinearGradient
+              colors={["#F6017A", "#D10869", "#B7098B", "#F77737", "#FFDC80"]}
+              style={{
+                borderWidth: 3,
+                borderRadius: 55,
+                padding: 3,
+              }}
+            >
+              <View
+                style={{
+                  backgroundColor: "black",
+                  borderRadius: 50,
+                  padding: 3,
+                }}
+              >
+                <Image
+                  source={{
+                    uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0IQ0E8QBrwViT6tBHS5ON7yK3wjZal2-EgQ&s",
+                  }}
+                  style={{
+                    width: 90,
+                    height: 90,
+                    borderRadius: 50,
+                  }}
+                />
+              </View>
+            </LinearGradient>
+            <View style={{ flexDirection: "column", gap: 10 }}>
+              <Text
+                style={{ fontWeight: "bold", fontSize: 17, color: "white" }}
+              >
+                Sait
+              </Text>
+              <View style={{ flexDirection: "row", gap: 20 }}>
+                <View>
+                  <Text
+                    style={{ fontWeight: "bold", fontSize: 17, color: "white" }}
+                  >
+                    20
+                  </Text>
+                  <Text style={{ color: "white" }}>posts</Text>
+                </View>
+                <View>
+                  <Text
+                    style={{ fontWeight: "bold", fontSize: 17, color: "white" }}
+                  >
+                    20
+                  </Text>
+                  <Text style={{ color: "white" }}>followers</Text>
+                </View>
+                <View>
+                  <Text
+                    style={{ fontWeight: "bold", fontSize: 17, color: "white" }}
+                  >
+                    20
+                  </Text>
+                  <Text style={{ color: "white" }}>following</Text>
+                </View>
+              </View>
+            </View>
+          </View>
+          <View>
+            <Text style={{ color: "gray" }}>University</Text>
+            <Text style={{ color: "white" }}>
+              We inspire, educate and inovate, with and for our students. Tag
+              your with <Text style={{ color: "#769BB6" }}>#hereAtSAIT</Text>{" "}
+              for a chance to be featured!
+            </Text>
+            <Text style={{ color: "white" }}>
+              Current <Text style={{ color: "#769BB6" }}>@hereatsait</Text>
+            </Text>
+            <Text style={{ color: "#769BB6" }}>
+              1301 16 Ave NW, Calgary, Alberta
+            </Text>
+            <View
+              style={{ flexDirection: "row", gap: 10, alignItems: "center" }}
+            >
+              <MaterialIcons name="link" size={20} color="white" />
+              <Text style={{ color: "white" }}>sait.ca and 1 more</Text>
+            </View>
+          </View>
+
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              gap: 10,
+            }}
+          >
+            <View
+              style={{
+                backgroundColor: "#4553BD",
+                borderRadius: 5,
+                flex: 1,
+                height: 33,
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Text style={{ color: "white" }}>Follow</Text>
+            </View>
 
             <View
               style={{
-                position: "absolute",
-                bottom: -2,
-                width: 60,
-                height: 2,
-                backgroundColor: "white",
+                borderColor: "white",
+                borderWidth: 1,
+                borderRadius: 5,
+                flex: 1,
+                height: 33,
+                alignItems: "center",
+                justifyContent: "center",
               }}
-            />
+            >
+              <Text style={{ color: "white" }}>Message</Text>
+            </View>
+            <View
+              style={{
+                borderColor: "white",
+                borderWidth: 1,
+                borderRadius: 5,
+                flex: 1,
+                height: 33,
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Text style={{ color: "white" }}>Contact</Text>
+            </View>
+            <View
+              style={{
+                borderColor: "white",
+                borderWidth: 1,
+                borderRadius: 5,
+                flex: 0.3,
+                height: 33,
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <MaterialIcons name="person-add" size={20} color="white" />
+            </View>
           </View>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
 
-          <FontAwesomeIcon name="play-circle" size={30} color="white" />
-          <FontAwesomeIcon name="user-o" size={30} color="white" />
+              paddingHorizontal: 50,
+              paddingBottom: 2,
+            }}
+          >
+            <View style={{ position: "relative", alignItems: "center" }}>
+              <Ionicons
+                name="grid-outline"
+                size={30}
+                color="white"
+                style={{ paddingBottom: 10 }}
+              />
+
+              <View
+                style={{
+                  position: "absolute",
+                  bottom: -2,
+                  width: 60,
+                  height: 2,
+                  backgroundColor: "white",
+                }}
+              />
+            </View>
+
+            <FontAwesomeIcon name="play-circle" size={30} color="white" />
+            <FontAwesomeIcon name="user-o" size={30} color="white" />
+          </View>
         </View>
-      </View>
-      <View style={styles.imageGrid}>
-        <Image
-          source={{
-            uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0IQ0E8QBrwViT6tBHS5ON7yK3wjZal2-EgQ&s",
-          }}
-          style={styles.imageCell}
-        />
-        <Image
-          source={{
-            uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIyS5J0wzkCxrKUYMZYnxfezHhAxetFjuDcg&s",
-          }}
-          style={styles.imageCell}
-        />
-        <Image
-          source={{
-            uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIyS5J0wzkCxrKUYMZYnxfezHhAxetFjuDcg&s",
-          }}
-          style={styles.imageCell}
-        />
-        <Image
-          source={{
-            uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIyS5J0wzkCxrKUYMZYnxfezHhAxetFjuDcg&s",
-          }}
-          style={styles.imageCell}
-        />
-        <Image
-          source={{
-            uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIyS5J0wzkCxrKUYMZYnxfezHhAxetFjuDcg&s",
-          }}
-          style={styles.imageCell}
-        />
-        <Image
-          source={{
-            uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIyS5J0wzkCxrKUYMZYnxfezHhAxetFjuDcg&s",
-          }}
-          style={styles.imageCell}
-        />
-      </View>
-
+        <View style={styles.imageGrid}>
+          <Image
+            source={{
+              uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0IQ0E8QBrwViT6tBHS5ON7yK3wjZal2-EgQ&s",
+            }}
+            style={styles.imageCell}
+          />
+          <Image
+            source={{
+              uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIyS5J0wzkCxrKUYMZYnxfezHhAxetFjuDcg&s",
+            }}
+            style={styles.imageCell}
+          />
+          <Image
+            source={{
+              uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIyS5J0wzkCxrKUYMZYnxfezHhAxetFjuDcg&s",
+            }}
+            style={styles.imageCell}
+          />
+          <Image
+            source={{
+              uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIyS5J0wzkCxrKUYMZYnxfezHhAxetFjuDcg&s",
+            }}
+            style={styles.imageCell}
+          />
+          <Image
+            source={{
+              uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIyS5J0wzkCxrKUYMZYnxfezHhAxetFjuDcg&s",
+            }}
+            style={styles.imageCell}
+          />
+          <Image
+            source={{
+              uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIyS5J0wzkCxrKUYMZYnxfezHhAxetFjuDcg&s",
+            }}
+            style={styles.imageCell}
+          />
+        </View>
+      </ScrollView>
       <View style={styles.footer}>
         <Ionicons name="home-outline" size={30} color="white" />
         <Ionicons name="search-outline" size={30} color="white" />
@@ -278,15 +294,22 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
   },
   footer: {
+    position: "absolute",
+    bottom: 0,
     width: "100%",
     paddingHorizontal: 30,
     paddingTop: 10,
-    paddingBottom: 30,
+    paddingBottom: 35,
     flexDirection: "row",
     justifyContent: "space-between",
     backgroundColor: "black",
     borderTopWidth: 0.5,
     borderColor: "black",
+  },
+  scrollContent: {
+    flexGrow: 1,
+    backgroundColor: "black",
+    paddingBottom: 10,
   },
   imageGrid: {
     flexGrow: 1,
