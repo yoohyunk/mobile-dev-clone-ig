@@ -1,9 +1,14 @@
 import React from 'react';
-import { Text, StyleSheet, View, Image, TouchableOpacity, ScrollView } from 'react-native';
+import { Text, StyleSheet, View, Image, TouchableOpacity, ScrollView, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 const IgProfile = () => {
   const posts = Array(20).fill('https://www.sait.ca/assets/image/banners/image-banner-photo-600x600/br-students-walking-outside-heritage-hall-600x600.jpg');
+
+const handleAlertPress = () => {
+  Alert.alert('Alert button pressed');
+};
+
 
   return (
     <ScrollView style={styles.container}>
@@ -36,7 +41,7 @@ const IgProfile = () => {
       </View>
 
       <View style={styles.navIcons}>
-        <Text style={styles.icon}>#</Text>
+        <Text style={[styles.icon, styles.activeTab]}>#</Text>
         <Text style={styles.icon}>▶️</Text>
         <Text style={styles.icon}>👤</Text>
       </View>
@@ -48,12 +53,16 @@ const IgProfile = () => {
       </View>
 
       <View style={styles.bottomNav}>
-        <Text style={styles.icon}>🏠</Text>
+        <Text style={[styles.icon, styles.activeTab]}>🏠</Text>
         <Text style={styles.icon}>🔍</Text>
         <Text style={styles.icon}>➕</Text>
         <Text style={styles.icon}>▶️</Text>
         <Text style={styles.icon}>👤</Text>
       </View>
+      
+      <TouchableOpacity style={styles.alertButton} onPress={handleAlertPress}>
+        <Text style={styles.alertButtonText}>Alert Button</Text>
+      </TouchableOpacity>
     </ScrollView>
   );
 };
@@ -154,11 +163,29 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     paddingVertical: 8,
     backgroundColor: 'black',
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
+    marginTop: 20,
   },
+  activeTab: {
+    color: 'white', 
+    textDecorationLine: 'none',  
+    borderBottomWidth: 3,        
+    borderBottomColor: 'white',  
+    paddingBottom: 1,            
+  },
+  alertButton: {
+    backgroundColor: '#FF0000',
+    padding: 15,
+    borderRadius: 5,
+    marginTop: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  alertButtonText: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+
 });
 
 export default IgProfile;
