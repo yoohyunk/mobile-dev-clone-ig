@@ -1,9 +1,10 @@
-import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Image } from "react-native";
-import Icon from "react-native-vector-icons/MaterialIcons";
+
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import Feather from "react-native-vector-icons/Feather";
+import { LinearGradient } from "expo-linear-gradient";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 export default function App() {
   return (
@@ -25,7 +26,9 @@ export default function App() {
           gap: 15,
           backgroundColor: "black",
           width: "100%",
-          padding: 15,
+          paddingHorizontal: 15,
+          paddingTop: 15,
+          paddingBottom: 2,
         }}
       >
         <View
@@ -37,16 +40,33 @@ export default function App() {
             gap: 15,
           }}
         >
-          <Image
-            source={{
-              uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0IQ0E8QBrwViT6tBHS5ON7yK3wjZal2-EgQ&s",
-            }}
+          <LinearGradient
+            colors={["#F6017A", "#D10869", "#B7098B", "#F77737", "#FFDC80"]}
             style={{
-              width: 90,
-              height: 90,
-              borderRadius: 50,
+              borderWidth: 3,
+              borderRadius: 55,
+              padding: 3,
             }}
-          />
+          >
+            <View
+              style={{
+                backgroundColor: "black",
+                borderRadius: 50,
+                padding: 3,
+              }}
+            >
+              <Image
+                source={{
+                  uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0IQ0E8QBrwViT6tBHS5ON7yK3wjZal2-EgQ&s",
+                }}
+                style={{
+                  width: 90,
+                  height: 90,
+                  borderRadius: 50,
+                }}
+              />
+            </View>
+          </LinearGradient>
           <View style={{ flexDirection: "column", gap: 10 }}>
             <Text style={{ fontWeight: "bold", fontSize: 17, color: "white" }}>
               Sait
@@ -79,7 +99,25 @@ export default function App() {
             </View>
           </View>
         </View>
-        <Text style={{ color: "white" }}>Welcome to Sait Instagram page</Text>
+        <View>
+          <Text style={{ color: "gray" }}>University</Text>
+          <Text style={{ color: "white" }}>
+            We inspire, educate and inovate, with and for our students. Tag your
+            with <Text style={{ color: "#769BB6" }}>#hereAtSAIT</Text> for a
+            chance to be featured!
+          </Text>
+          <Text style={{ color: "white" }}>
+            Current <Text style={{ color: "#769BB6" }}>@hereatsait</Text>
+          </Text>
+          <Text style={{ color: "#769BB6" }}>
+            1301 16 Ave NW, Calgary, Alberta
+          </Text>
+          <View style={{ flexDirection: "row", gap: 10, alignItems: "center" }}>
+            <MaterialIcons name="link" size={20} color="white" />
+            <Text style={{ color: "white" }}>sait.ca and 1 more</Text>
+          </View>
+        </View>
+
         <View
           style={{
             flexDirection: "row",
@@ -89,13 +127,12 @@ export default function App() {
         >
           <View
             style={{
-              borderColor: "white",
-              borderWidth: 1,
+              backgroundColor: "#4553BD",
               borderRadius: 5,
               flex: 1,
-              height: 33, // Set height here
-              alignItems: "center", // Center horizontally
-              justifyContent: "center", // Center vertically
+              height: 33,
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
             <Text style={{ color: "white" }}>Follow</Text>
@@ -107,22 +144,68 @@ export default function App() {
               borderWidth: 1,
               borderRadius: 5,
               flex: 1,
-              height: 33, // Set height here
-              alignItems: "center", // Center horizontally
-              justifyContent: "center", // Center vertically
+              height: 33,
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
             <Text style={{ color: "white" }}>Message</Text>
+          </View>
+          <View
+            style={{
+              borderColor: "white",
+              borderWidth: 1,
+              borderRadius: 5,
+              flex: 1,
+              height: 33,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Text style={{ color: "white" }}>Contact</Text>
+          </View>
+          <View
+            style={{
+              borderColor: "white",
+              borderWidth: 1,
+              borderRadius: 5,
+              flex: 0.3,
+              height: 33,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <MaterialIcons name="person-add" size={20} color="white" />
           </View>
         </View>
         <View
           style={{
             flexDirection: "row",
             justifyContent: "space-between",
+
             paddingHorizontal: 50,
+            paddingBottom: 2,
           }}
         >
-          <Ionicons name="grid-outline" size={30} color="white" />
+          <View style={{ position: "relative", alignItems: "center" }}>
+            <Ionicons
+              name="grid-outline"
+              size={30}
+              color="white"
+              style={{ paddingBottom: 10 }}
+            />
+
+            <View
+              style={{
+                position: "absolute",
+                bottom: -2,
+                width: 60,
+                height: 2,
+                backgroundColor: "white",
+              }}
+            />
+          </View>
+
           <FontAwesomeIcon name="play-circle" size={30} color="white" />
           <FontAwesomeIcon name="user-o" size={30} color="white" />
         </View>
@@ -184,7 +267,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     paddingTop: 50,
-    // paddingBottom: 30,
+    paddingBottom: 0,
   },
   topBar: {
     flexDirection: "row",
