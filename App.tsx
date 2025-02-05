@@ -5,6 +5,7 @@ import {
   Image,
   Button,
   ScrollView,
+  Alert,
 } from "react-native";
 
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
@@ -14,9 +15,9 @@ import { LinearGradient } from "expo-linear-gradient";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 export default function App() {
-  function showAlert(event: GestureResponderEvent): void {
-    throw new Error("Function not implemented.");
-  }
+  const showAlert = () => {
+    Alert.alert("Alert Button pressed");
+  };
 
   return (
     <View style={styles.container}>
@@ -265,6 +266,9 @@ export default function App() {
           />
         </View>
       </ScrollView>
+      <View style={styles.buttonContainer}>
+        <Button title="Alert" onPress={showAlert} color={"white"} />
+      </View>
       <View style={styles.footer}>
         <Ionicons name="home-outline" size={30} color="white" />
         <Ionicons name="search-outline" size={30} color="white" />
@@ -324,5 +328,12 @@ const styles = StyleSheet.create({
     height: "100%",
     aspectRatio: 0.66,
     resizeMode: "cover",
+  },
+  buttonContainer: {
+    position: "absolute",
+    bottom: 70,
+    width: "100%",
+    alignItems: "center",
+    backgroundColor: "black",
   },
 });
